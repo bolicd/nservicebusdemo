@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-WorkerService1-2F874334-06A9-4F2E-A4DB-7F5DBFA521A6</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="7.0.0" />
+        <PackageReference Include="NServiceBus" Version="8.0.3" />
+        <PackageReference Include="NServiceBus.Extensions.Hosting" Version="2.0.0" />
+        <PackageReference Include="NServiceBus.Persistence.Sql" Version="7.0.0" />
+        <PackageReference Include="NServiceBus.Transport.SqlServer" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+      <ProjectReference Include="..\Messages\Messages.csproj" />
+    </ItemGroup>
+</Project>
