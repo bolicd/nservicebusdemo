@@ -60,7 +60,7 @@ public class Worker : BackgroundService
         var number = 0;
         
         //Modify variant to check how it works with different settings
-        var variant = Variants.TransactionScope;
+        var variant = Variants.TransactionFromConnection;
 
         try
         {
@@ -94,7 +94,6 @@ public class Worker : BackgroundService
         }
     }
    
-    //Passes connection string 
     private async Task DefaultNetShouldCreateDTC(int number, CancellationToken stoppingToken)
     {
         try
@@ -126,6 +125,7 @@ public class Worker : BackgroundService
         using var transactionScope = TransactionUtils.CreateTransactionScope().EnsureDistributed();
         try
         {
+            //no need to pass transaction here can use generic repository(or EF for example)
             await SaveUsingGenericRepository($"saved {number}").ConfigureAwait(false);
 
             if (number % 2 == 0)
@@ -157,7 +157,7 @@ public class Worker : BackgroundService
         
         try
         {
-            //We are using dapper here to be able to pass transaction directy
+            //We are using dapper here to be able to pass transaction directly
             await SaveDummyDataIntoTable(number, connection, transaction);
 
             await _messageSession.Publish(new MyMessage { Number = number }, stoppingToken)
