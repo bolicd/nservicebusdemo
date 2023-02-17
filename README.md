@@ -1,7 +1,7 @@
 # nservicebusdemo
 Example NServiceBus project using SQL transport, MSSQL database and Windows MSDTC for distributed transactions if needed
 
-#how to run
+# how to run
 
 1. create database for nservice bus. i suggest using database name from connection string
 2. create bussiness mock database, use Infrastructure/Sql Scripts for this
