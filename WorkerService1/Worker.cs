@@ -60,7 +60,7 @@ public class Worker : BackgroundService
         var number = 0;
         
         //Modify variant to check how it works with different settings
-        var variant = Variants.TransactionFromConnection;
+        var variant = Variants.TransactionScopeWithConnection;
 
         try
         {

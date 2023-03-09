@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="DapperGenericRepository" Version="1.0.0" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
       <PackageReference Include="NServiceBus" Version="8.0.3" />
     </ItemGroup>
 
